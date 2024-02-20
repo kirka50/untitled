@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html,body {
+  margin: 0;
+  padding: 0;
+}
+* {
+  font-family: 'Montserrat';
+}
+
+@mixin mediaBetween ($min,$max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content
+  }
+}
+
+%borders {
+  @media screen and (max-width: 767px) {
+    margin: 0 12px;
+  }
+  @media screen and (min-width: 1920px) {
+    margin: 0 92px;
+  }
+  @media screen and (min-width: 1440px) and (max-width: 1919px) {
+    margin: 0 72px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1439px) {
+    margin: 0 36px;
+  }
+
+}
+.nav-bar {
+  @extend %borders;
+  font-size: 16px;
+  line-height: 24px;
+  gap: 16px;
+  display: flex;
+  &__item {
+    color: #28282899;
+    &_active{
+      color: #282828;
+    }
+  }
+  
+}
+.contacts {
+  display: flex;
+  flex-direction: column;
+  @extend %borders;
+  margin-top: 24px;
+  &__title {
+    @include mediaBetween(1440px, 1919px) {
+      margin-top: 24px;
+    }
+    @include mediaBetween(768px,1439px) {
+      margin-top: 40px;
+      font-size: 48px;
+      line-height: 58px;
+    }
+    @media (max-width: 767px) {
+      margin-top: 40px;
+      font-size: 32px;
+      line-height: 40px;
+    }
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 58px;
+  }
+  &__map {
+    height: 728px;
+    display: flex;
+    position: relative;
+    @include mediaBetween(1440px, 1919px) {
+      margin-top: 56px;
+    }
+    @media screen and (min-width: 1920px){
+      margin-top: 56px;
+      max-width: 1700px; 
+    }
+    @include mediaBetween(768px, 1439px) {
+      flex-wrap: wrap;
+      position: relative;
+      gap: 32px;
+      margin-top: 40px;
+    }
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+      position: relative;
+      gap: 32px;
+      margin-top: 32px;
+    }
+    &::before {
+      @include mediaBetween(1440px, 1919px) {
+        height: 696px;
+      }
+      @media screen and (min-width: 1920px){
+        height: 728px;
+        max-width: 1920px; 
+      }
+      @include mediaBetween(768px, 1439px) {
+        height: 400px;
+        position: relative;
+      }
+      
+      @media (max-width: 767px) {
+        height: 280px;
+        position: relative;
+      }
+      height: 90%;
+      width: 100%;
+      content: '';
+      filter: grayscale(100%);
+      position: absolute;
+      background-image: url(/public/images/map.png);
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .map__pin {
+      position: absolute;
+      right: 49%;
+      top: 22%;
+      @include mediaBetween(768px, 1439px) {
+        top: 1%;
+      }
+      @media (max-width: 767px) {
+        top: 0px
+      }
+    }
+  }
+  &__contacts--info {
+    position: absolute;
+    top: 10%;
+    left: 2%;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 56px;
+    background-color: #ffffff;
+    @include mediaBetween(768px, 1439px) {
+      position: relative;
+      top: 0;
+      left: 0;
+      background-color: #FAFAFA;
+      width: 100%;
+    }
+    @media (max-width: 767px) {
+      position: relative;
+      top: 0;
+      left: 0;
+      background-color: #FAFAFA;
+      width: 100%;
+    }
+    .contacts--info__title {
+      color: #282828;
+      font-weight: 600;
+      font-size: 32px;
+      @media (max-width: 767px) {
+        font-size: 20px;
+      }
+    }
+    .contacts--info__phone {
+      display: flex;
+      justify-content: space-between;
+      .phone__title {
+        gap: 32px;
+        display: flex;
+        flex-wrap: nowrap;
+        @media (max-width: 767px) {
+          flex-wrap: wrap;
+          gap: 16px;
+        }
+      }
+    }
+    .contact--info__mail {
+      display: flex;
+      justify-content: space-between;
+      gap: 32px;
+    }
+    .title {
+      font-size: 16px;
+      line-height: 24px;
+      &__head {
+        font-weight: 600;
+        color: #282828;
+      }
+      &__body {
+        font-weight: 400;
+        color: #818181;
+        @media (max-width: 767px) {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
+    .copy-button{
+      flex-shrink: 0;
+      &:hover rect, &:hover path{
+        stroke: #00A55A;
+      }
+    }
+    .contact--info__buttons {
+      display: flex;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      gap: 24px;
+      @media (max-width: 767px) {
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .buttons_button {
+        padding: 16px 26px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        @media (max-width: 767px) {
+          width: 100%;
+          justify-content: center;
+        }
+        @include mediaBetween(768px, 1439px) {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    
+      .button_call-button {
+        background-color: #00A55A;
+        color: #FFFFFF;
+      }
+      .button_map-button {
+        background-color: #E5F6EE;
+        color: #00A55A;
+      }
+    }
+  }
+  .contacts__notice {
+    display: flex;
+    position: absolute;
+    gap: 16px;
+    right: 2%;
+    top: 1%;
+    max-width: 510px;
+    padding: 32px;
+    background-color: #ffffff;
+
+    @include mediaBetween(1440px, 1919px) {
+    }
+    @media screen and (min-width: 1920px){
+    }
+    @include mediaBetween(768px, 1439px) {
+      position: relative;
+      width: 100%;
+      justify-content: center;
+      background-color: #FAFAFA;
+      top: 0;
+      right: 0;
+      max-width: 100%;
+    }
+    @media (max-width: 767px) {
+      position: relative;
+      width: 100%;
+      justify-content: center;
+      background-color: #FAFAFA;
+      top: 0;
+      right: 0;
+      max-width: 100%;
+    }
+    p {
+      padding: 0;
+      margin: 0;
+      color: #818181;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}

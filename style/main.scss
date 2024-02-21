@@ -72,6 +72,7 @@ html,body {
     position: relative;
     @include mediaBetween(1440px, 1919px) {
       margin-top: 56px;
+
     }
     @media screen and (min-width: 1920px){
       margin-top: 56px;
@@ -274,4 +275,24 @@ html,body {
       line-height: 20px;
     }
   }
+}
+.work--images {
+  @extend %borders;
+  &__slider {
+    .slider__items {
+      width: 100%;
+      display: flex;
+      gap: 40px;
+      overflow-x: scroll;
+      .slider__item {
+        img {
+          width: 416px;
+          height: 396px;
+          object-fit:cover;
+        }
+      }
+    }
+  }
+
+
 }

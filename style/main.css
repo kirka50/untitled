@@ -9,22 +9,22 @@ html, body {
 }
 
 @media screen and (max-width: 767px) {
-  .contacts, .nav-bar {
+  .work--images, .contacts, .nav-bar {
     margin: 0 12px;
   }
 }
 @media screen and (min-width: 1920px) {
-  .contacts, .nav-bar {
+  .work--images, .contacts, .nav-bar {
     margin: 0 92px;
   }
 }
 @media screen and (min-width: 1440px) and (max-width: 1919px) {
-  .contacts, .nav-bar {
+  .work--images, .contacts, .nav-bar {
     margin: 0 72px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1439px) {
-  .contacts, .nav-bar {
+  .work--images, .contacts, .nav-bar {
     margin: 0 36px;
   }
 }
@@ -311,4 +311,17 @@ html, body {
   color: #818181;
   font-size: 14px;
   line-height: 20px;
+}
+
+.work--images__slider .slider__items {
+  width: 100%;
+  display: flex;
+  gap: 40px;
+  overflow-x: scroll;
+}
+.work--images__slider .slider__items .slider__item img {
+  width: 416px;
+  height: 396px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=main.css.map */

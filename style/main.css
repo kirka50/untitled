@@ -46,6 +46,18 @@ html, body {
   display: flex;
   flex-direction: column;
   margin-top: 24px;
+  margin-bottom: 124px;
+  gap: 24px;
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .contacts {
+    margin-bottom: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .contacts {
+    margin-bottom: 64px;
+  }
 }
 .contacts__title {
   font-size: 56px;
@@ -72,9 +84,10 @@ html, body {
   }
 }
 .contacts__map {
-  height: 728px;
+  height: 696px;
   display: flex;
   position: relative;
+  overflow: hidden;
 }
 @media (min-width: 1440px) and (max-width: 1919px) {
   .contacts__map {
@@ -83,6 +96,7 @@ html, body {
 }
 @media screen and (min-width: 1920px) {
   .contacts__map {
+    height: 728px;
     margin-top: 56px;
     max-width: 1700px;
   }
@@ -93,6 +107,7 @@ html, body {
     position: relative;
     gap: 32px;
     margin-top: 40px;
+    height: 400px;
   }
 }
 @media (max-width: 767px) {
@@ -101,6 +116,7 @@ html, body {
     position: relative;
     gap: 32px;
     margin-top: 32px;
+    height: 280px;
   }
 }
 .contacts__map::before {
@@ -153,8 +169,8 @@ html, body {
 }
 .contacts__contacts--info {
   position: absolute;
-  top: 10%;
-  left: 2%;
+  top: 250px;
+  left: 6%;
   background-position: center;
   display: flex;
   flex-direction: column;
@@ -168,7 +184,6 @@ html, body {
     top: 0;
     left: 0;
     background-color: #FAFAFA;
-    width: 100%;
   }
 }
 @media (max-width: 767px) {
@@ -177,7 +192,6 @@ html, body {
     top: 0;
     left: 0;
     background-color: #FAFAFA;
-    width: 100%;
   }
 }
 .contacts__contacts--info .contacts--info__title {
@@ -286,7 +300,6 @@ html, body {
 @media (min-width: 768px) and (max-width: 1439px) {
   .contacts .contacts__notice {
     position: relative;
-    width: 100%;
     justify-content: center;
     background-color: #FAFAFA;
     top: 0;
@@ -297,7 +310,6 @@ html, body {
 @media (max-width: 767px) {
   .contacts .contacts__notice {
     position: relative;
-    width: 100%;
     justify-content: center;
     background-color: #FAFAFA;
     top: 0;

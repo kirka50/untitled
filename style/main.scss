@@ -48,6 +48,14 @@ html,body {
   flex-direction: column;
   @extend %borders;
   margin-top: 24px;
+  margin-bottom: 124px;
+  gap: 24px;
+  @include mediaBetween(768px,1439px) {
+    margin-bottom: 100px;
+  }
+  @media (max-width: 767px) {
+    margin-bottom: 64px;
+  }
   &__title {
     @include mediaBetween(1440px, 1919px) {
       margin-top: 24px;
@@ -67,14 +75,15 @@ html,body {
     line-height: 58px;
   }
   &__map {
-    height: 728px;
+    height: 696px;
     display: flex;
     position: relative;
+    overflow: hidden;
     @include mediaBetween(1440px, 1919px) {
       margin-top: 56px;
-
     }
     @media screen and (min-width: 1920px){
+      height: 728px;
       margin-top: 56px;
       max-width: 1700px; 
     }
@@ -83,12 +92,14 @@ html,body {
       position: relative;
       gap: 32px;
       margin-top: 40px;
+      height: 400px;
     }
     @media (max-width: 767px) {
       flex-wrap: wrap;
       position: relative;
       gap: 32px;
       margin-top: 32px;
+      height: 280px;
     }
     &::before {
       @include mediaBetween(1440px, 1919px) {
@@ -130,8 +141,8 @@ html,body {
   }
   &__contacts--info {
     position: absolute;
-    top: 10%;
-    left: 2%;
+    top: 250px;
+    left: 6%;
     background-position: center;
     display: flex;
     flex-direction: column;
@@ -143,14 +154,12 @@ html,body {
       top: 0;
       left: 0;
       background-color: #FAFAFA;
-      width: 100%;
     }
     @media (max-width: 767px) {
       position: relative;
       top: 0;
       left: 0;
       background-color: #FAFAFA;
-      width: 100%;
     }
     .contacts--info__title {
       color: #282828;
@@ -251,21 +260,19 @@ html,body {
     }
     @include mediaBetween(768px, 1439px) {
       position: relative;
-      width: 100%;
       justify-content: center;
       background-color: #FAFAFA;
       top: 0;
       right: 0;
-      max-width: 100%;
+      max-width:100%;
     }
     @media (max-width: 767px) {
       position: relative;
-      width: 100%;
       justify-content: center;
       background-color: #FAFAFA;
       top: 0;
       right: 0;
-      max-width: 100%;
+      max-width:100%;
     }
     p {
       padding: 0;

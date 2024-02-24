@@ -247,6 +247,7 @@ html, body {
 }
 .contacts__contacts--info .copy-button:hover rect, .contacts__contacts--info .copy-button:hover path {
   stroke: #00A55A;
+  cursor: pointer;
 }
 .contacts__contacts--info .contact--info__buttons {
   display: flex;
@@ -325,15 +326,93 @@ html, body {
   line-height: 20px;
 }
 
-.work--images__slider .slider__items {
+.work--images__slider .slider {
   width: 100%;
   display: flex;
   gap: 40px;
   overflow-x: scroll;
 }
-.work--images__slider .slider__items .slider__item img {
+.work--images__slider .slider::-webkit-scrollbar {
+  display: none;
+}
+.work--images__slider .slider .slider__item img {
   width: 416px;
   height: 396px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media screen and (min-width: 1920px) {
+  .work--images__slider .slider .slider__item img {
+    width: 552px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .work--images__slider .slider .slider__item img {
+    width: 552px;
+  }
+}
+@media (max-width: 767px) {
+  .work--images__slider .slider .slider__item img {
+    width: 351px;
+    height: 252px;
+  }
+}
+.work--images__slider .slider__utils {
+  display: flex;
+  margin-top: 32px;
+  align-items: center;
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .work--images__slider .slider__utils {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .work--images__slider .slider__utils {
+    margin-top: 24px;
+  }
+}
+.work--images__slider .slider__utils .progress {
+  width: 100%;
+  height: 8px;
+  background-color: #F2F2F2;
+}
+@media (max-width: 767px) {
+  .work--images__slider .slider__utils .progress {
+    height: 4px;
+  }
+}
+.work--images__slider .slider__utils .progress__bar {
+  width: 20%;
+  height: 100%;
+  background-color: #00A55A;
+}
+.work--images__slider .slider__utils .utils__buttons {
+  display: flex;
+  gap: 16px;
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .work--images__slider .slider__utils .utils__buttons {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .work--images__slider .slider__utils .utils__buttons {
+    display: none;
+  }
+}
+.work--images__slider .slider__utils .utils__buttons .left--button_active {
+  transform: rotate(180deg);
+  display: none;
+  cursor: pointer;
+}
+.work--images__slider .slider__utils .utils__buttons .left--button {
+  cursor: auto;
+}
+.work--images__slider .slider__utils .utils__buttons .right--button {
+  transform: rotate(180deg);
+  display: none;
+}
+.work--images__slider .slider__utils .utils__buttons .right--button_active {
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

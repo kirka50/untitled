@@ -4,7 +4,7 @@
         <title>Test</title>
         <link rel="stylesheet" href="/style/main.css">
         <link rel="stylesheet" href="/style/main.css.map">
-        <script src="/script/slider.js"></script>
+        <script src="/script/slider.js" defer></script>
     </head>
     <body>
         <div class="nav-bar">
@@ -112,7 +112,7 @@
         </div>
         <div class="work--images">
             <div class="work--images__slider">
-                <div class="slider__items">
+                <div class="slider__items slider">
                     <div class="slider__item">
                         <img src="/public/images/office/office1.jpeg">
                     </div>
@@ -127,15 +127,36 @@
                     </div>
                 </div>
                 <div class="slider__utils">
-                    <div class="utils__bar">
-                        
+                    <div class="progress">
+                        <div class="progress__bar">
+                    </div>
                     </div>
                     <div class="utils__buttons">
-
+                        <svg class="left--button" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M32 36L24 28L32 20" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            
+                        <svg class="left--button_active" id="leftButton" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect  x="0.5" y="0.5" width="55" height="55" fill="white"/>
+                            <rect  x="0.5" y="0.5" width="55" height="55" stroke="#00A55A"/>
+                            <path  d="M24 36L32 28L24 20" stroke="#00A55A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg class="right--button" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M32 36L24 28L32 20" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                            
+                        <svg class="right--button_active" id="rightButton" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0.5" y="0.5" width="55" height="55" fill="white"/>
+                            <rect x="0.5" y="0.5" width="55" height="55" stroke="#00A55A"/>
+                            <path d="M24 36L32 28L24 20" stroke="#00A55A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
                 </div>
             </div>
         </div>
     </body>
+    <script>
+
+    </script>
 </html>
 

@@ -207,6 +207,7 @@ html,body {
       flex-shrink: 0;
       &:hover rect, &:hover path{
         stroke: #00A55A;
+        cursor: pointer;
       }
     }
     .contact--info__buttons {
@@ -286,20 +287,80 @@ html,body {
 .work--images {
   @extend %borders;
   &__slider {
-    .slider__items {
+    .slider {
       width: 100%;
       display: flex;
       gap: 40px;
       overflow-x: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
       .slider__item {
         img {
           width: 416px;
           height: 396px;
           object-fit:cover;
+          @media screen and (min-width: 1920px){
+            width: 552px;
+          }
+          @include mediaBetween(768px, 1439px) {
+            width: 552px;
+          }
+          @media (max-width: 767px) {
+            width: 351px;
+            height: 252px;
+          }
+        }
+      }
+      &__utils {
+        display: flex;
+        margin-top: 32px;
+        align-items: center;
+        @include mediaBetween(768px, 1439px) {
+          margin-top: 40px;
+        }
+        @media (max-width: 767px) {
+          margin-top: 24px;
+        }
+        .progress {
+          width: 100%;
+          height: 8px;
+          background-color: #F2F2F2;
+          @media (max-width: 767px) {
+            height: 4px;
+          }
+          &__bar {
+            width: 20%;
+            height: 100%;
+            background-color: #00A55A;
+          }
+        }
+        .utils__buttons {
+          display: flex;
+          gap:16px;
+          @include mediaBetween(768px, 1439px) {
+            display: none;
+          }
+          @media (max-width: 767px) {
+            display: none;
+          }
+          .left--button_active {
+            transform: rotate(180deg);
+            display: none;
+            cursor: pointer;
+          }
+          .left--button {
+            cursor: auto;
+          }
+          .right--button {
+            transform: rotate(180deg);
+            display: none;
+          }
+          .right--button_active {
+            cursor: pointer;
+          }
         }
       }
     }
   }
-
-
 }
